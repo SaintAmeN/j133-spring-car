@@ -20,6 +20,16 @@
             <input th:field="*{iloscDrzwi}" type="number" class="form-control" id="pole-ilosc-drzwi" aria-describedby="opis-ilosc-drzwi" placeholder="Ilość drzwi">
             <small id="opis-ilosc-drzwi" class="form-text text-muted">Podaj ilość drzwi w tym samochodzie.</small>
         </div>
+        <div class="form-group">
+            <label for="pole-data-rej">Data rejestracji</label>
+            <input th:field="*{dataPierwszejRejestracji}" type="date" class="form-control" id="pole-data-rej" aria-describedby="opis-data-rej" placeholder="Data rejestracji">
+            <small id="opis-data-rej" class="form-text text-muted">Podaj datę pierwszej rejestracji tego pojazdu.</small>
+        </div>
+        <div class="form-group">
+            <label for="pole-poj-silnika">Pojemność silnika</label>
+            <input th:field="*{pojemnoscSilnika}"  type="number" step="0.001" class="form-control" id="pole-poj-silnika" aria-describedby="opis-poj-silnika" placeholder="Pojemność silnika">
+            <small id="opis-poj-silnika" class="form-text text-muted">Podaj pojemność skokową silnika tego pojazdu.</small>
+        </div>
         <button class="btn btn-primary form-control" type="submit">Wyślij</button>
     </form>
 </div>
