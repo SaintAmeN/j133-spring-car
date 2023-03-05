@@ -62,14 +62,44 @@ Oczekiwana odpowiedź:
 ```
 
 - Usuwanie encji car (po identyfikatorze)
+```http request
+### Zapytanie o usunięcie samochodu o identyfikatorze = 3 
+DELETE http://localhost:8080/rest/car/3
+```
+Oczekiwana odpowiedź (brak/pusta):
+```json
+```
+
 - Edycje encji car
+```http request
+### Zapytanie o edytowanie samochodu o identyfikatorze = 3 
+PATCH http://localhost:8080/rest/car/3
+Content-Type: application/json
+
+{
+  "nrRejestracyjny": "GOGO TESLA",
+  "iloscDrzwi": 3,
+  "pojemnoscSilnika": 0.768
+}
+```
+Oczekiwana odpowiedź:
+```json
+{
+  "id": 2,
+  "nrRejestracyjny": "GOGO TESLA",
+  "dataPierwszejRejestracji": "2020-03-12",
+  "iloscDrzwi": 3,
+  "pojemnoscSilnika": 0.768
+}
+```
+
 - Szukanie encji car po identyfikatorze:
     - PathVariable -> /rest/car/3
     - RequestParam -> /rest/car/byId?cid=3
 
 Aplikacja (Thymeleaf) umożliwia:
-- Dodawanie encji car
-- Listowanie encji car
+- Dodawanie encji car (`http://localhost:8080/view/car/form`)
+- Listowanie encji car (`http://localhost:8080/view/car`)
 
 ### Jak skonfigurować i uruchomić / How to configure and run
 Aby skonfigurować aplikację, należy dostarczyć parametry do połączenia z bazą danych.
